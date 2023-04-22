@@ -105,6 +105,19 @@
     #  thunderbird
     ];
   };
+  users.users.kvili = {
+    isNormalUser = true;
+    description = "Line";
+    shell = pkgs.fish;
+    extraGroups = [ "networkmanager" ];
+    packages = with pkgs; [
+      firefox
+      vscode
+      git
+
+    #  thunderbird
+    ];
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
