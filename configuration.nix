@@ -54,14 +54,15 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the MATE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.mate.enable = true;
+  # Enable the Gnome Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "gb";
-    xkbVariant = "";
+    layout = "gb,no";
+    xkbVariant = "dvorak,";
+    xkbOptions = "grp:win_space_toggle";
   };
 
   # Configure console keymap
@@ -100,7 +101,7 @@
       firefox
       vscode
       git
-      
+
     #  thunderbird
     ];
   };
