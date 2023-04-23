@@ -101,8 +101,7 @@
       firefox
       vscode
       git
-
-    #  thunderbird
+      signal-desktop
     ];
   };
   users.users.kvili = {
@@ -114,8 +113,7 @@
       firefox
       vscode
       git
-
-    #  thunderbird
+      signal-desktop
     ];
   };
 
