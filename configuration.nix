@@ -14,6 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.supportedFilesystems = [ "ntfs" ];
 
   # Setup keyfile
   boot.initrd.secrets = {
@@ -50,6 +51,9 @@
     LC_TELEPHONE = "nb_NO.UTF-8";
     LC_TIME = "nb_NO.UTF-8";
   };
+
+  # Enable flatpak
+  services.flatpak.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -91,6 +95,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Enable fish shell
+  programs.fish.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tc = {
     isNormalUser = true;
@@ -98,10 +104,7 @@
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-      vscode
-      git
-      signal-desktop
+      vim
     ];
   };
   users.users.kvili = {
@@ -110,10 +113,7 @@
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" ];
     packages = with pkgs; [
-      firefox
-      vscode
-      git
-      signal-desktop
+      vim
     ];
   };
 
@@ -124,7 +124,15 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+     firefox
+     vscode
+     git
+     signal-desktop
+     wget
+     nano
+     gnomeExtensions.caffeine
+     gnome.gnome-tweaks
+     libreoffice
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
