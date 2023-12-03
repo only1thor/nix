@@ -120,6 +120,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enable tailscale deamon
+  services.tailscale.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -132,6 +135,7 @@
      nano
      gnomeExtensions.caffeine
      gnome.gnome-tweaks
+     tailscale
      libreoffice
      signal-desktop
   ];
