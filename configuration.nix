@@ -147,6 +147,7 @@
      wget
      htop
      qmk
+     openscad
      nano
      gnomeExtensions.caffeine
      gnome.gnome-tweaks
