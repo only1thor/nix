@@ -147,6 +147,7 @@
      wget
      htop
      qmk
+     prusa-slicer
      openscad
      nano
      gnomeExtensions.caffeine
