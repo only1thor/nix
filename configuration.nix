@@ -144,6 +144,7 @@
      vscode
      git
      signal-desktop
+     vlc
      wget
      htop
      qmk
