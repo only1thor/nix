@@ -59,6 +59,10 @@
     LC_TIME = "nb_NO.UTF-8";
   };
 
+
+  # Enable docker
+  virtualisation.docker.enable = true;
+
   # Enable flatpak
   services.flatpak.enable = true;
 
@@ -114,7 +118,7 @@
     isNormalUser = true;
     description = "tc";
     shell = pkgs.fish;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "adbusers" "uucp" "tty" "dialout"];
     packages = with pkgs; [
       vim
     ];
