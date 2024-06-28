@@ -79,10 +79,10 @@
   ];
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "gb,no";
-    xkbVariant = "dvorak,";
-    xkbOptions = "grp:win_space_toggle";
+    variant = "dvorak,";
+    options = "grp:win_space_toggle";
   };
 
   # Configure console keymap
